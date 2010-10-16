@@ -1,0 +1,19 @@
+<% unless @videos.blank? %>
+  <table>
+    <tbody>
+      <% @videos.each do |video| %>
+        <tr>
+          <td><%= video.name %></td>
+          <td><%= video.video_images.length %></td>
+          <td>
+            <%= form_tag video_add_image_path(video) do %>
+            <input type="text" name="url"/>
+            <input type="submit"/>
+            <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  No videos
+<% end %>

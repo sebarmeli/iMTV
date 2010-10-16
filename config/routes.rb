@@ -1,4 +1,9 @@
 Imtv::Application.routes.draw do
+  resources :videos do
+    post 'add_image'
+  end
+   
+  #
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
