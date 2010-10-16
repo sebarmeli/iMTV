@@ -1,8 +1,10 @@
 	<script src="http://dev.jquery.com/view/tags/ui/latest/ui/effects.core.js"></script> 
 	<script src="http://dev.jquery.com/view/tags/ui/latest/ui/effects.slide.js"></script> 
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
   <%= javascript_include_tag 'supersized.2.0.js' %>
   <%= javascript_include_tag 'imtv.js' %>
   <%= javascript_include_tag 'jquery.form.js' %>
+  <%= javascript_include_tag 'jquery-ui-1.8.5.custom.css' %>
   
 	<script type="text/javascript">  
 		$(function(){
@@ -40,7 +42,7 @@
 
     	<!-- logo -->
         <div id="logo">
-        	<img src="/images/logo.png" width="200px" />
+          <a href="#" onClick="$('#dialog').dialog('open')"><img src="/images/logo.png" width="200px" /></a>
         </div>
 
          <audio controls="controls" autoplay="autoplay" style="padding-top: 60px;">
@@ -107,6 +109,7 @@
             $('#supersize').prepend('<a href="#"><img src="' + new_url + '"/></a>');
             var currentslide = $('#supersize .activeslide');
 	          currentslide.removeClass('activeslide');
+	          $('#supersize a:last').addClass('activeslide');
             nextslide();
 
             $('#form_image_url').val(new_url);
@@ -116,8 +119,21 @@
             $('#searchResults').fadeOut();
             return false;
           }
-        </script>
+
+$(function() {
+  $( "#dialog" ).dialog({autoOpen:false});
+	});
           
+        </script>
+
+
+<div id="dialog" title="About iMTV">
+  <p>
+  <strong>iMTV</strong> is an <a href="http://ampedweb.org/">Amped Sydney 2010</a> creation.   It allows you to collaborate globally to create videos for your favourite tracks, 
+engage with artists and connect with fans.
+  </p>
+</div>
+
 	</div> 
 </div> 
   
