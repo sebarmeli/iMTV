@@ -1,4 +1,5 @@
 Imtv::Application.routes.draw do
+  root :to => "home#index"
   resources :videos do
     post 'add_image'
   end
