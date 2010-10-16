@@ -1,5 +1,13 @@
+<div style="color: white;">
 <% unless @videos.blank? %>
-  <table>
+  <table border=1>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Image Count</th>
+        <th>Add Image</th>
+        <th>Acton</th>
+      </tr>
     <tbody>
       <% @videos.each do |video| %>
         <tr>
@@ -19,3 +27,4 @@
 <% else %>
   No videos
 <% end %>
+</div>
