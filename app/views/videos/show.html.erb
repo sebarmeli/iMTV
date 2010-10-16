@@ -14,8 +14,8 @@
 				navigation: 1,
 				transition: 1, //0-None, 1-Fade, 2-slide top, 3-slide right, 4-slide bottom, 5-slide left
 				pause_hover: 0,
-				slide_counter: 1,
-				slide_captions: 1,
+				slide_counter: 0,
+				slide_captions: 0,
 				slide_interval: 3000  
 			};
 	        $('#supersize').supersized(); 
@@ -90,7 +90,10 @@
         
         <script>
           function addImage(new_url) {
-            $('#supersize').append('<a href="#"><img src="' + new_url + '"/></a>');
+            $('#supersize').prepend('<a href="#"><img src="' + new_url + '"/></a>');
+            var currentslide = $('#supersize .activeslide');
+	          currentslide.removeClass('activeslide');
+            nextslide();
 
             $('#form_image_url').val(new_url);
             $('form').ajaxSubmit();
