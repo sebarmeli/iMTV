@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    redirect_to(video_path(Video.last))
+    redirect_to(Video.last)
   end
 
 end

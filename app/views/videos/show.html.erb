@@ -2,6 +2,7 @@
 	<script src="http://dev.jquery.com/view/tags/ui/latest/ui/effects.slide.js"></script> 
   <%= javascript_include_tag 'supersized.2.0.js' %>
   <%= javascript_include_tag 'imtv.js' %>
+  <%= javascript_include_tag 'jquery.form.js' %>
   
 	<script type="text/javascript">  
 		$(function(){
@@ -27,7 +28,7 @@
  
 <!--Slides--> 
 <div id="supersize"> 
-  <% @video.video_images.each do |image| %>
+  <% @video.video_images.reverse.each do |image| %>
     <a href="#"><img src="<%= image.url %>" title="Contrib Here"/></a> 
   <% end %>
 </div> 
@@ -89,8 +90,14 @@
         
         <script>
           function addImage(new_url) {
+            $('#supersize').append('<a href="#"><img src="' + new_url + '"/></a>');
+
             $('#form_image_url').val(new_url);
-            $('form').submit();
+            $('form').ajaxSubmit();
+
+            $('.images').html('')
+            $('#searchResults').fadeOut();
+            return false;
           }
         </script>
           
