@@ -62,7 +62,7 @@
         <div id="searchResults">
         	<script type="text/javascript">        			
 				function fire() {
-						$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7ccccc8f3fe6e78aa9c23ec60660c0a7&tags=" + $('input.search').val() + "&per_page=10&format=json&callback=?&jsoncallback=flickrhandler");
+						$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7ccccc8f3fe6e78aa9c23ec60660c0a7&text=" + $('input.search').val() + "&per_page=10&format=json&callback=?&jsoncallback=flickrhandler");
 				  };
 				  
 				function flickrhandler (data) {
