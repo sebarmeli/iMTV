@@ -1,0 +1,96 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	color:#8FC2FF;
+	text-decoration: none;
+	outline: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+img{
+	border:none;
+}
+body {
+	overflow:hidden;/*Needed to eliminate scrollbars*/
+	background:#000;
+}
+#content{
+	margin:0px auto;
+	height:150px;
+	width:100%;
+	bottom:5%;
+	z-index: 3;
+	background:#000 no-repeat 90%;
+	position:absolute;
+}
+#contentframe{
+	overflow: hidden;
+	height: 100%;
+	text-align:left;
+	z-index: 3;
+}
+
+
+/* 
+		SEARCH
+*/
+#search {
+	float:right;
+	margin-right:40px;
+}
+#searchResults {
+	float:right;
+	width:400px;
+	height:400px;
+	background:#000;
+	position:absolute;
+	right:0;
+	top:-400px;
+	display:none;
+}
+
+#logo {
+	float:left;
+	width:200px;
+	height:140px;
+	color:#fff;
+	padding-top:10px;
+	margin-left:40px;
+}
+
+#images a {
+	width:100px;
+	height:100px;
+	
+	margin:10px;
+	display:block;
+}
+
+#loading {
+	position: absolute;
+	top: 49.5%; 
+	left: 49.5%;
+	z-index: 3;
+	width: 24px; 
+	height: 24px;
+	text-indent: -999em;
+	background-image: url(images/progress.gif);
+}
+#supersize{
+	position:fixed;
+}
+#supersize img, #supersize a{
+	height:100%;
+	width:100%;
+	position:absolute;
+	z-index: 0;
+}
+#supersize .prevslide, #supersize .prevslide img{
+	z-index: 1;
+}
+#supersize .activeslide, #supersize .activeslide img{
+	z-index: 2;
+}

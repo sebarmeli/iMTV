@@ -1,9 +1,9 @@
 class VideosController < ApplicationController
   
   def add_image
-    video = Video.find_by_id(params[:video_id])
+    video = Video.find_by_name(params[:video_id])
     video.video_images.create!(:url => params[:url])
-    render :text => "OK"
+    redirect_to(video)
   end
 
   def index
