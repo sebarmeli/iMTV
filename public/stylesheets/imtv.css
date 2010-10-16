@@ -16,6 +16,8 @@ img{
 body {
 	overflow:hidden;/*Needed to eliminate scrollbars*/
 	background:#000;
+	color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
 }
 #content{
 	margin:0px auto;
@@ -39,17 +41,80 @@ body {
 */
 #search {
 	float:right;
-	margin-right:40px;
+	margin-right:70px;
+	margin-top:40px;
 }
+.search {
+	width:200px;
+	overflow:hidden;
+	border:none;
+	background:#fff;
+	padding:10px;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px; 
+}
+.submit {
+	margin-left:5px;
+	width:68px;
+	height:40px;
+	background:#1bb2ae;
+	border:2px solid #fff;
+	color:#fff;
+	cursor:pointer;
+	outline:none;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px; 
+}
+
+.submit:hover {
+	background:#107270;
+}
+
 #searchResults {
 	float:right;
 	width:400px;
-	height:400px;
+	height:300px;
 	background:#000;
 	position:absolute;
 	right:0;
-	top:-400px;
+	top:-300px;
 	display:none;
+	margin-right:20px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;  
 }
 
 #logo {
@@ -61,12 +126,16 @@ body {
 	margin-left:40px;
 }
 
-#images a {
-	width:100px;
-	height:100px;
-	
-	margin:10px;
+.images a {
+	width:80px;
+	height:80px;
+	overflow:hidden;
+	margin:10px 0 0 10px;
 	display:block;
+	float:left;
+}
+.images a img {
+	width:100px;
 }
 
 #loading {

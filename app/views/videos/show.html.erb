@@ -37,52 +37,65 @@
 <div id="content"> 
 	<div id="contentframe"> 
 
+
     	<!-- logo -->
         <div id="logo">
         	<img src="/images/logo.png" width="200px" />
         </div>
 
-  
-  <div style="padding-top: 30px;padding-left: 20px;">  
-   <audio controls="controls" autoplay="autoplay">
-   <source src="<%= @video.audio_url %>" type="audio/mpeg" />
-   Your browser does not support the audio element, you suck!
-   </audio>
- </div>
-
+         <audio controls="controls" autoplay="autoplay" style="padding-top: 60px;">
+         <source src="<%= @video.audio_url %>" type="audio/mpeg" />
+         Your browser does not support the audio element, you suck!
+         </audio>
 
         <!-- search input -->
     	<div id="search">
-    		<input type="text" class="search" placeholder="Search your videos" name"q" autofocus required/>
-	    	<input type="submit" value="GO" class="submit" onclick="fire();" /> 
+            <p style="margin-bottom:10px; font-size:14px; color:#ccc">How does this music make you feel?</p>        
+    		  <input type="search" class="search" value="eg. happy, sad, sexy" placeholder="Search your videos" name"q" autofocus required onFocus="this.select()" />
+	    	  <input type="submit" value="GO" class="submit" onclick="fire();" />
+            
+          <script type="text/javascript">
+            $("input, textarea").focus(
+              function(){
+                // only select if the text has not changed
+                if(this.value == this.defaultValue){
+                  this.select();
+                }
+              }
+            );
+            $("input, textarea").mouseup(function(e){
+              e.preventDefault();
+            });				
+			  </script>
+
     	</div>
         <!-- / search input -->
         
         <!-- search results -->
         <div id="searchResults">
         	<script type="text/javascript">        			
-				function fire() {
-						$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7ccccc8f3fe6e78aa9c23ec60660c0a7&text=" + $('input.search').val() + "&per_page=10&format=json&callback=?&jsoncallback=flickrhandler");
-				  };
-				  
-				function flickrhandler (data) {
-					 var s=""
-					 for (var i=0; i < data.photos.photo.length; i++) {
-						  photo = data.photos.photo[i];
-							t_url = "http://farm" + photo.farm + ".static.flickr.com/" +  photo.server + "/" + photo.id + "_" + photo.secret + "_" + "t.jpg";
-							large_url = "http://farm" + photo.farm + ".static.flickr.com/" +  photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
-							p_url = "http://www.flickr.com/photos/" + photo.owner + "/" + photo.id;
-							s+=  '<a href="#" onClick="addImage(\'' + large_url + '\')">' + '<img alt="'+ photo.title +  '"src="' + t_url + '"/>' + '</a>';
-					 }
-					$('.images').html(s);
-				  }
-			</script>
+              function fire() {
+                  $.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7ccccc8f3fe6e78aa9c23ec60660c0a7&tags=" + $('input.search').val() + "&per_page=10&format=json&callback=?&jsoncallback=flickrhandler");
+                };
+                
+              function flickrhandler (data) {
+                 var s=""
+                 for (var i=0; i < data.photos.photo.length; i++) {
+                    photo = data.photos.photo[i];
+                    t_url = "http://farm" + photo.farm + ".static.flickr.com/" +  photo.server + "/" + photo.id + "_" + photo.secret + "_" + "t.jpg";
+                    large_url = "http://farm" + photo.farm + ".static.flickr.com/" +  photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
+                    p_url = "http://www.flickr.com/photos/" + photo.owner + "/" + photo.id;
+                    s+=  '<a href="#" onClick="addImage(\'' + large_url + '\')">' + '<img alt="'+ photo.title +  '"src="' + t_url + '"/>' + '</a>';
+                 }
+                $('.images').html(s);
+                }
+			    </script>
             
             <div class="images">
 	        </div>
         </div>
         <!-- / search results -->
-
+        
         <div style="display:none">
           <%= form_tag video_add_image_path(@video) do %>
             <input type="hidden" name="url" id="form_image_url"/>
