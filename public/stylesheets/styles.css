@@ -70,7 +70,7 @@
     width: 24px; 
     height: 24px;
     text-indent: -999em;
-    background-image: url(/images/progress.gif);
+    background-image: url('/images/progress.gif');
   }
   #supersize{
     position:fixed;

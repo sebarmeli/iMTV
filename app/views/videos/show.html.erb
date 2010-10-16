@@ -26,25 +26,21 @@
  
 <!--Slides--> 
 <div id="supersize"> 
-	<a href="http://interfacelift.com/wallpaper_beta/details/1819/bird_on_a_branch.html"><img src="/images/bird.jpg" title="Bird On A Branch"/></a> 
-	<a href="http://interfacelift.com/wallpaper_beta/details/988/paradise_lost.html"><img src="/images/paradise.jpg" title="Paradise Lost"/></a> 
-	<a href="http://interfacelift.com/wallpaper_beta/details/1864/morelia_viridis.html"><img src="/images/snake.jpg" title="Morelia Viridis"/></a> 
+  <% @video.video_images.each do |image| %>
+    <a href="#"><img src="<%= image.url %>" title="Contrib Here"/></a> 
+  <% end %>
 </div> 
  
 <!--Content area that hovers on top--> 
 <div id="content"> 
 	<div id="contentframe"> 
 	
-		<div id="slidecounter"><!--Slide counter--> 
-			<span class="slidenumber"></span>/<span class="totalslides"></span> 
-		</div> 
-		<div id="slidecaption"><!--Slide captions displayed here--></div> 
-		<!--Logo--> 
-		<a href="http://buildinternet.com/2009/05/supersized-20-full-screen-imagebackground-slideshow-jquery-plugin-w-transitions-and-controls/" class="stamp"><img src="/images/supersizedblackmini.gif"/></a> 
-		<!--Navigation--> 
-		<div id="navigation"> 
-			<a href="#" id="prevslide"><img src="/images/back_dull.gif"/></a><a href="#" id="pauseplay"><img src="/images/pause_dull.gif"/></a><a href="#" id="nextslide"><img src="/images/forward_dull.gif"/></a> 
-		</div> 
+
+   <audio controls="controls" autoplay="autoplay">
+   <source src="<%= @video.audio_url %>" type="audio/mpeg" />
+   Your browser does not support the audio element, you suck!
+   </audio>
+
 		
 	</div> 
 </div> 

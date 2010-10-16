@@ -50,29 +50,29 @@ Thanks to Aen for preloading, fade effect, & vertical centering
 				    });
 					$('#nextslide img').hover(function() {
 						if($.paused == true) return false;
-					   	$(this).attr("src", "images/forward.gif");
+					   	$(this).attr("src", "/images/forward.gif");
 					}, function(){
 						if($.paused == true) return false;
-					    $(this).attr("src", "images/forward_dull.gif");
+					    $(this).attr("src", "/images/forward_dull.gif");
 					});
 					$('#prevslide img').hover(function() {
 						if($.paused == true) return false; 
-					    $(this).attr("src", "images/back.gif");
+					    $(this).attr("src", "/images/back.gif");
 					}, function(){
 						if($.paused == true) return false;
-					    $(this).attr("src", "images/back_dull.gif");
+					    $(this).attr("src", "/images/back_dull.gif");
 					});
 					
 				    //Play/Pause Button
 				    $('#pauseplay').click(function() {
 				    	if($.inAnimation) return false;
-				    	var src = ($(this).find('img').attr("src") === "images/play.gif") ? "images/pause.gif" : "images/play.gif";
-      					if (src == "images/pause.gif"){
-      						$(this).find('img').attr("src", "images/play.gif");
+				    	var src = ($(this).find('img').attr("src") === "/images/play.gif") ? "/images/pause.gif" : "/images/play.gif";
+      					if (src == "/images/pause.gif"){
+      						$(this).find('img').attr("src", "/images/play.gif");
       						$.paused = false;
 					        slideshow_interval = setInterval(nextslide, options.slide_interval);  
 				        }else{
-				        	$(this).find('img').attr("src", "images/pause.gif");
+				        	$(this).find('img').attr("src", "/images/pause.gif");
 				        	clearInterval(slideshow_interval);
 				        	$.paused = true;
 				        }
@@ -80,20 +80,20 @@ Thanks to Aen for preloading, fade effect, & vertical centering
 					    return false;
 				    });
 				    $('#pauseplay').mouseover(function() {
-				    	var imagecheck = ($(this).find('img').attr("src") === "images/play_dull.gif");
+				    	var imagecheck = ($(this).find('img').attr("src") === "/images/play_dull.gif");
 				    	if (imagecheck){
-      						$(this).find('img').attr("src", "images/play.gif"); 
+      						$(this).find('img').attr("src", "/images/play.gif"); 
 				        }else{
-				        	$(this).find('img').attr("src", "images/pause.gif");
+				        	$(this).find('img').attr("src", "/images/pause.gif");
 				        }
 				    });
 				    
 				    $('#pauseplay').mouseout(function() {
-				    	var imagecheck = ($(this).find('img').attr("src") === "images/play.gif");
+				    	var imagecheck = ($(this).find('img').attr("src") === "/images/play.gif");
 				    	if (imagecheck){
-      						$(this).find('img').attr("src", "images/play_dull.gif"); 
+      						$(this).find('img').attr("src", "/images/play_dull.gif"); 
 				        }else{
-				        	$(this).find('img').attr("src", "images/pause_dull.gif");
+				        	$(this).find('img').attr("src", "/images/pause_dull.gif");
 				        }
 				        return false;
 				    });
@@ -109,7 +109,7 @@ Thanks to Aen for preloading, fade effect, & vertical centering
 		$('#supersize > *').hover(function() {
 	   		if (options.slideshow == 1 && options.pause_hover == 1){
 	   			if(!($.paused) && options.navigation == 1){
-	   				$('#pauseplay > img').attr("src", "images/pause.gif"); 
+	   				$('#pauseplay > img').attr("src", "/images/pause.gif"); 
 	   				clearInterval(slideshow_interval);
 	   			}
 	   		}
@@ -118,7 +118,7 @@ Thanks to Aen for preloading, fade effect, & vertical centering
 	   	}, function() {
 			if (options.slideshow == 1 && options.pause_hover == 1){
 				if(!($.paused) && options.navigation == 1){
-					$('#pauseplay > img').attr("src", "images/pause_dull.gif");
+					$('#pauseplay > img').attr("src", "/images/pause_dull.gif");
 					slideshow_interval = setInterval(nextslide, options.slide_interval);
 				} 
 			}
