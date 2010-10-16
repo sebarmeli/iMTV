@@ -1,0 +1,51 @@
+	<script src="http://dev.jquery.com/view/tags/ui/latest/ui/effects.core.js"></script> 
+	<script src="http://dev.jquery.com/view/tags/ui/latest/ui/effects.slide.js"></script> 
+  <%= javascript_include_tag 'supersized.2.0.js' %>
+  
+	<script type="text/javascript">  
+		$(function(){
+			$.fn.supersized.options = {  
+				startwidth: 640,  
+				startheight: 480,
+				vertical_center: 1,
+				slideshow: 1,
+				navigation: 1,
+				transition: 1, //0-None, 1-Fade, 2-slide top, 3-slide right, 4-slide bottom, 5-slide left
+				pause_hover: 0,
+				slide_counter: 1,
+				slide_captions: 1,
+				slide_interval: 3000  
+			};
+	        $('#supersize').supersized(); 
+	    });
+	</script> 
+
+ 
+<!--Loading display while images load--> 
+<div id="loading">&nbsp;</div> 
+ 
+<!--Slides--> 
+<div id="supersize"> 
+	<a href="http://interfacelift.com/wallpaper_beta/details/1819/bird_on_a_branch.html"><img src="/images/bird.jpg" title="Bird On A Branch"/></a> 
+	<a href="http://interfacelift.com/wallpaper_beta/details/988/paradise_lost.html"><img src="/images/paradise.jpg" title="Paradise Lost"/></a> 
+	<a href="http://interfacelift.com/wallpaper_beta/details/1864/morelia_viridis.html"><img src="/images/snake.jpg" title="Morelia Viridis"/></a> 
+</div> 
+ 
+<!--Content area that hovers on top--> 
+<div id="content"> 
+	<div id="contentframe"> 
+	
+		<div id="slidecounter"><!--Slide counter--> 
+			<span class="slidenumber"></span>/<span class="totalslides"></span> 
+		</div> 
+		<div id="slidecaption"><!--Slide captions displayed here--></div> 
+		<!--Logo--> 
+		<a href="http://buildinternet.com/2009/05/supersized-20-full-screen-imagebackground-slideshow-jquery-plugin-w-transitions-and-controls/" class="stamp"><img src="/images/supersizedblackmini.gif"/></a> 
+		<!--Navigation--> 
+		<div id="navigation"> 
+			<a href="#" id="prevslide"><img src="/images/back_dull.gif"/></a><a href="#" id="pauseplay"><img src="/images/pause_dull.gif"/></a><a href="#" id="nextslide"><img src="/images/forward_dull.gif"/></a> 
+		</div> 
+		
+	</div> 
+</div> 
+  
